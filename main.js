@@ -1,4 +1,5 @@
 let maxNum, progressWidth = 0
+if (localStorage.progressWidth && Number(localStorage.progressWidth) > 0) progressWidth = Number(localStorage.progressWidth)
 
 firstCard.innerText = Math.round(Math.random() * 9)
 secondCard.innerText = Math.round(Math.random() * 9)
@@ -9,6 +10,7 @@ setInterval(() => {
     progress.style.width = progressWidth + '%'
     if (firstCard.innerText == secondCard.innerText) firstCard.innerText = Math.round(Math.random() * 9)
     level.innerText = localStorage.level
+    localStorage.progressWidth = progressWidth
 }, 100)
 
 document.querySelectorAll('span.card').forEach(btn => {
