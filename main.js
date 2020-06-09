@@ -15,8 +15,14 @@ document.querySelectorAll('span.card').forEach(btn => {
     btn.addEventListener('click', () => {
         if (progressWidth == 100) {
             setTimeout(() => {
+                document.querySelector('.alert').classList.add("active")
+                if (document.querySelector('.alert').classList.contains("disable"))
+                    document.querySelector('.alert').classList.remove("disable")
                 localStorage.level++
                 progressWidth = 0
+                setTimeout(() => {
+                    document.querySelector('.alert').classList.remove("active")
+                }, 1500)
             }, 1000)
         }
 

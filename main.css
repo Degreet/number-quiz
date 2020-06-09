@@ -7,6 +7,19 @@ body {
     width: 37%;
     margin: auto;
 }
+
+.alert {
+    display: none;
+    position: absolute;
+    top: 15px;
+    height: 40px;
+    z-index: 111;
+}
+
+.alert.active {
+    display: flex;
+    align-items: center;
+}
   
 * {
     margin: 0;
@@ -27,6 +40,19 @@ body {
     background: #70a1ff;
     height: 100%;
     max-width: 100%;
+}
+
+#glass {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+#glass.active {
+    z-index: 1111;
 }
 
 .cards {
