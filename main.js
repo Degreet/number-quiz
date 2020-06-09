@@ -4,6 +4,7 @@ if (localStorage.progressWidth && Number(localStorage.progressWidth) > 0) progre
 firstCard.innerText = Math.round(Math.random() * 9)
 secondCard.innerText = Math.round(Math.random() * 9)
 if (!localStorage.level) localStorage.level = 1
+if (!localStorage.reged) welcomeModalHref.click()
 
 setInterval(() => {
     maxNum = Math.max(Number(firstCard.innerText), Number(secondCard.innerText))
@@ -53,9 +54,12 @@ document.querySelectorAll('span.card').forEach(btn => {
     })
 })
 
+closeWelcomeModalBtn.onclick = () => localStorage.reged = true
+
 function resetData() {
     confirmReset = confirm("Вы действительно хотите удалить все ваши данные? Восстановить их будет не возможно!")
     if (confirmReset) {
+        progressWidth = 0
         localStorage.clear()
         location.reload()
     }
