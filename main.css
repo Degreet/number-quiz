@@ -29,13 +29,16 @@ body {
 }
   
 .progressbar {
-    border-radius: 5px;
     width: 100%;
     height: 3vh;
     background: #ecf0f1;
     border: .1px solid #f1f2f6;
 }
-  
+
+.progressbar, #progress {
+    border-radius: 5px;
+}
+
 #progress {
     background: #70a1ff;
     height: 100%;
